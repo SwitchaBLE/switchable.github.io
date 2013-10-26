@@ -3,6 +3,7 @@
 @circle-size: 3.5em;
 @mini-circle-size: 1em;
 @subheader-size: 0.28em;
+@clock-size: 8em;
 @header-left-margin: 0.44em;
 @nav-height: 50px;
 
@@ -19,12 +20,22 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans Condensed';
-    font-weight: 700;
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+
+h1.huge {
+    font-size: 4em;
+    @media (min-width: @screen-md) { font-size: 5em; }
 }
 
 .blue {
     color: @blue;
+}
+
+.dark {
+    background-color: #444;
+    color: white;
 }
 
 header, section {
@@ -84,6 +95,38 @@ header, section {
     }
 }
 
+.clock {
+    display: inline-block;
+    border: .3em solid black;
+    width: @clock-size;
+    height: @clock-size;
+    border-radius: (@clock-size / 2);
+    
+    & > div {
+        position: absolute;
+        height: .05em;
+        background-color: black;
+        border: .125em solid black;
+        //border-radius: .1em;
+        -ms-transform-origin: 98% 48%;
+        -webkit-transform-origin: 98% 48%;
+        transform-origin: 98% 48%;
+    }
+    .clock-hour {
+        width: 26.6%;
+        margin-left: 25%;
+        margin-top: (@clock-size / 2 - .125em);
+    }
+    .clock-minute {
+        width: 42%;
+        margin-left: 10%;
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        margin-top: (@clock-size / 2 - .125em);
+    }
+}
+
 nav {
     width: 100%;
     margin-top: -@nav-height;
@@ -91,7 +134,7 @@ nav {
     position: fixed;
     z-index: 1;
     text-transform: uppercase;
-    background: fade(white, 20%);
+    background: white;
     padding: 0 10px;
     
     #mini-logo {
@@ -144,6 +187,7 @@ header {
         bottom: 20px;
         right: 40px;
         text-transform: uppercase;
+        white-space: nowrap;
     }
     @media (min-width: @screen-sm) {
         padding-top: 190px;
@@ -155,5 +199,36 @@ header {
     }
     @media (min-width: @screen-lg) {
         #main-logo { margin-left: 1em; }
+    }
+}
+
+#scene1 {
+    top: 0%;
+    padding: 160px 0 0 1em;
+    h1 {
+        position: absolute;
+        width: 100%;
+        -ms-transform-origin: 3em;
+        -webkit-transform-origin: 3em;
+        -transform-origin: 3em;
+    }
+}
+
+#scene2 {
+    top: 0%;
+    background-color: @blue;
+    #clock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -(@clock-size / 2) 0 0 -(@clock-size / 2);
+        -ms-transform-origin: (@clock-size / 2) (@clock-size / 2 + .2em);
+        -webkit-transform-origin: (@clock-size / 2) (@clock-size / 2 + .2em);
+        transform-origin: (@clock-size / 2) (@clock-size / 2 + .2em);
+        border-color: white;
+        * {
+            border-color: white;
+            background-color: white;
+        }
     }
 }

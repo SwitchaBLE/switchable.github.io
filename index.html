@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwitchaBLE</title>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Gudea:400,700,400italic">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300|Gudea:400,700,400italic|Open+Sans:300">
     <link rel="stylesheet" href="stylesheets/bootstrap-base.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/skrollr.css" data-skrollr-stylesheet>
     <link rel="stylesheet/less" type="text/css" href="stylesheets/main.less">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js"></script>
+    <script src="javascripts/skrollr.menu.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
 </head>
-<body>
+<body id="top">
     <nav>
         <div>
-            <a href="#" id="mini-logo" data-0="width: 0em; opacity: 0" data-900="width: 2.25em; opacity: 0" data-1000="width: 2.5em; opacity: 1">
+            <a href="#top" id="mini-logo" data-menu-top="0">
                 <div class="logo logo-mini">
                     <div class="logo-circle"></div>
                     <h1>S</h1>
@@ -26,25 +28,48 @@
         </div>
         <div id="trakcer"></div>
     </nav>
-    <header data-0="padding-left: 5%; padding-top: 12em; background-color: rgba(0, 0, 0, 0);" data-1000="padding-left: 1%; padding-top: 0.35em; background-color: rgba(0, 0, 0, 0.2)" data-1500=" background-color: rgba(0, 0, 0, 0.8)">
-        <img src="images/lightbulb.png" id="lightbulb" class="hidden-xs" data-0="transform[overshootStart]: rotate(0deg); opacity: 1" data-1000="transform[overshootStart]: rotate(180deg); opacity: 1">
-        <div id="main-logo" class="logo" data-0="font-size[overshootStart]: 4.5em; opacity: 1" data-1000="font-size[overshootStart]: .4em; opacity: 0">
+    <header>
+        <img src="images/lightbulb.png" id="lightbulb" class="hidden-xs">
+        <div id="main-logo" class="logo">
             <div class="logo-circle"></div>
             <h1>Switcha<span class="blue">BLE</span></h1>
             <h2>Auburn University Senior Design</h2>
         </div>
-        <span id="tip" data-0="right: 2em; opacity: 1" data-1000="right: -20em; opacity: 0">Scroll to start presentation</span>
+        <span id="tip">Scroll to start presentation</span>
     </header>
+    
+    <section id="scene1">
+        <h1 class="huge">What is Switcha<span class="blue">BLE</span>?</h1>
+    </section>
+    
+    <section id="scene2">
+        <div class="clock" id="clock">
+            <div class="clock-minute"></div>
+            <div class="clock-hour"></div>
+        </div>
+    </section>
+    
+    <script src="javascripts/skrollr.stylesheets.min.js"></script>
     <script>
         var s = skrollr.init({
             easing: {
                 overshootStart: function(p) {
-                    return - 0.589 * Math.cos(3.9 * p - 0.785) + 0.42;
+                    var value = - 0.589 * Math.cos(3.9 * p - 0.785) + 0.42;
+                    return value <= 1 ? value : 1;
                 },
                 overshootBoth: function(p) {
                     return - 0.732 * Math.cos(4.6 * p - 0.785) + 0.5;
                 }
             }
+        });
+        
+        skrollr.menu.init(s, {
+
+            animate: true,
+            easing: "outCubic",
+            duration: function(currentTop, targetTop) {
+                return Math.abs(currentTop - targetTop) / 3;
+            },
         });
     </script>
 </body>

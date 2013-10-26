@@ -1,0 +1,151 @@
+nav { -skrollr-animation-name: nav; }
+#mini-logo { -skrollr-animation-name: mini-logo; }
+header { -skrollr-animation-name: header; }
+#lightbulb { -skrollr-animation-name: lightbulb; }
+#main-logo { -skrollr-animation-name: main-logo; }
+#tip { -skrollr-animation-name: tip; }
+#scene1 { -skrollr-animation-name: scene1; }
+#scene1 h1 { -skrollr-animation-name: scene1-h1; }
+#scene2 { -skrollr-animation-name: scene2; }
+#clock { -skrollr-animation-name: clock; }
+#clock .clock-hour { -skrollr-animation-name: clock-hour; }
+#clock .clock-minute { -skrollr-animation-name: clock-minute; }
+
+@-skrollr-keyframes nav {
+    0 {
+        background-color[begin]: rgba(255, 255, 255, 0);
+    }
+    2600 {
+        background-color[end]: rgba(255, 255, 255, 1);
+    }
+}
+
+@-skrollr-keyframes mini-logo {
+    0 {
+        width: 0em;
+        opacity: 0;
+    }
+    900 {
+        width: 2.25em;
+        opacity: 0;
+    }
+    1000 {
+        width: 2.5em;
+        opacity: 1;
+    }
+}
+
+@-skrollr-keyframes header {
+    0 {
+        opacity: 1;
+        padding-left: 5%;
+        padding-top: 12em;
+    }
+    1000 {
+        opacity: 0;
+        padding-left: 1%;
+        padding-top: 0.35em;
+    }
+}
+
+@-skrollr-keyframes lightbulb {
+    0 {
+        transform[overshootStart]: rotate(0deg);
+    }
+    1000 {
+        transform[overshootStart]: rotate(180deg);
+    }
+}
+
+@-skrollr-keyframes main-logo {
+    0 {
+        font-size[overshootStart]: 4.5em;
+    }
+    1000 {
+        font-size[overshootStart]: .4em;
+    }
+}
+
+@-skrollr-keyframes tip {
+    0 {
+        right[overshootStart]: 5%;
+        opacity: 1;
+    }
+    1000 {
+        right[overshootStart]: 100%;
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes scene1 {
+    0 {
+        opacity: 0;
+    }
+    1000 {
+        opacity: 1;
+    }
+}
+
+@-skrollr-keyframes scene1-h1 {
+    0 {
+        left[overshootStart]: 100%;
+        top: 100px;
+    }
+    1000 {
+        left[overshootStart]: 10%;
+        top: 140px;
+    }
+    2000 {
+        top: 180px;
+        transform[swing]: scale(1);
+    }
+    2500 {
+        transform[swing]: scale(200);
+    }
+}
+
+@-skrollr-keyframes scene2 {
+    2400 {
+        opacity: 0;
+    }
+    2500 {
+        opacity: 1;
+    }
+}
+
+@-skrollr-keyframes clock {
+    2500 {
+        transform: scale(1000);
+    }
+    3000 {
+        transform: scale(1);
+        -moz-transition: prop time;
+        -ms-transition: prop time;
+        -o-transition: prop time;
+        transition: prop time;
+        top[quadratic]: 50%;
+        opacity: 1;
+    }
+    5500 {
+        top[quadratic]: 10%;
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes clock-hour {
+    2600 {
+        transform: rotate(0deg);
+    }
+    5500 {
+        transform: rotate(90deg);
+    }
+}
+
+@-skrollr-keyframes clock-minute {
+    2600 {
+        transform: rotate(90deg);
+    }
+    5500 {
+        transform: rotate(1170deg);
+    }
+}
