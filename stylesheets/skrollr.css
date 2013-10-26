@@ -115,14 +115,10 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes clock {
     2500 {
-        transform: scale(1000);
+        transform[outCubic]: scale(1000);
     }
     3000 {
-        transform: scale(1);
-        -moz-transition: prop time;
-        -ms-transition: prop time;
-        -o-transition: prop time;
-        transition: prop time;
+        transform[outCubic]: scale(1);
         top[quadratic]: 50%;
         opacity: 1;
     }
