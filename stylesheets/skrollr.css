@@ -1,4 +1,8 @@
 nav { -skrollr-animation-name: nav; }
+nav a[href='#about'] { -skrollr-animation-name: nav-about; }
+nav a[href='#team'] { -skrollr-animation-name: nav-team; }
+nav a[href='#photos'] { -skrollr-animation-name: nav-photos; }
+nav a[href='#docs'] { -skrollr-animation-name: nav-docs; }
 #mini-logo { -skrollr-animation-name: mini-logo; }
 header { -skrollr-animation-name: header; }
 #lightbulb { -skrollr-animation-name: lightbulb; }
@@ -10,6 +14,12 @@ header { -skrollr-animation-name: header; }
 #clock { -skrollr-animation-name: clock; }
 #clock .clock-hour { -skrollr-animation-name: clock-hour; }
 #clock .clock-minute { -skrollr-animation-name: clock-minute; }
+#switchable-is { -skrollr-animation-name: switchable-is; }
+#alarm-clock { -skrollr-animation-name: alarm-clock; }
+#app { -skrollr-animation-name: app; }
+#device { -skrollr-animation-name: device; }
+#design-project { -skrollr-animation-name: design-project; }
+
 
 @-skrollr-keyframes nav {
     0 {
@@ -17,6 +27,21 @@ header { -skrollr-animation-name: header; }
     }
     2600 {
         background-color[end]: rgba(255, 255, 255, 1);
+    }
+}
+
+@-skrollr-keyframes nav-about {
+    0 {
+        color[begin]: rgb(170, 170, 170);
+        //border-bottom-width[begin]: 0px;
+    }
+    1000 {
+        color[begin]: rgb(101, 151, 207);
+        //border-bottom-width[begin]: 1px;
+    }
+    5500 {
+        color[begin]: rgb(170, 170, 170);
+        //border-bottom-width[end]: 0px;
     }
 }
 
@@ -138,10 +163,40 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes clock-minute {
-    2600 {
-        transform: rotate(90deg);
+    2600 { transform: rotate(90deg); }
+    5500 { transform: rotate(1170deg); }
+}
+
+@-skrollr-keyframes switchable-is {
+    2500 { top[cubic]: 60%; }
+    5500 { top[cubic]: 80%; }
+    
+}
+
+@-skrollr-keyframes alarm-clock {
+    0 { display: inline; }
+    3500 { display: none; }
+}
+
+@-skrollr-keyframes app {
+    2500 { display: none; }
+    3500 { display: inline; }
+    4000 { display: none; }
+}
+
+@-skrollr-keyframes device {
+    2500 { display: none; }
+    4000 { display: inline; }
+    4500 { display: none; }
+}
+
+@-skrollr-keyframes design-project {
+    2500 { display: none; }
+    4500 {
+        display: inline;
+        color: white;
     }
-    5500 {
-        transform: rotate(1170deg);
+    5000 {
+        color: !#87b9ef;
     }
 }

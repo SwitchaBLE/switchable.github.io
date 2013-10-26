@@ -13,7 +13,7 @@
 
 body {
     padding-top: @nav-height;
-    font: 400 ~"12px/1.4" 'Gudea';
+    font: 400 ~"12px/1.4" 'Open Sans';
     @media (min-width: @screen-sm) { font-size: 16px; }
     @media (min-width: @screen-md) { font-size: 18px; }
     @media (min-width: @screen-sm) { font-size: 20px; }
@@ -216,7 +216,7 @@ header {
 
 #scene2 {
     top: 0%;
-    background-color: @blue;
+    background-color: #444;
     #clock {
         position: absolute;
         top: 50%;
@@ -229,6 +229,21 @@ header {
         * {
             border-color: white;
             background-color: white;
+        }
+    }
+    #switchable-is {
+//        width: 14em;
+//        margin-left: -7em;
+//        left: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 3em;
+        color: @gray;
+        position: absolute;
+        top: 60%;
+        span {
+            color: white;
+            display: none;
         }
     }
 }
