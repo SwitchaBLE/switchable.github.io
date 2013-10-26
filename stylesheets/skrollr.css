@@ -18,7 +18,7 @@ header { -skrollr-animation-name: header; }
 #alarm-clock { -skrollr-animation-name: alarm-clock; }
 #app { -skrollr-animation-name: app; }
 #device { -skrollr-animation-name: device; }
-#design-project { -skrollr-animation-name: design-project; }
+#design { -skrollr-animation-name: design; }
 
 
 @-skrollr-keyframes nav {
@@ -130,12 +130,11 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes scene2 {
-    2400 {
-        opacity: 0;
-    }
-    2500 {
-        opacity: 1;
-    }
+    2400 { opacity: 0; }
+    2500 { opacity: 1; }
+    5500 { top[outCubic]: 0%; }
+    6500 { top[outCubic]: -10%; }
+    6600 { top: -100%; }
 }
 
 @-skrollr-keyframes clock {
@@ -174,29 +173,32 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes alarm-clock {
-    0 { display: inline; }
+    0 { display: block; }
     3500 { display: none; }
 }
 
 @-skrollr-keyframes app {
     2500 { display: none; }
-    3500 { display: inline; }
+    3500 { display: block; }
     4000 { display: none; }
 }
 
 @-skrollr-keyframes device {
     2500 { display: none; }
-    4000 { display: inline; }
+    4000 { display: block; }
     4500 { display: none; }
 }
 
-@-skrollr-keyframes design-project {
+@-skrollr-keyframes design {
     2500 { display: none; }
     4500 {
-        display: inline;
+        display: block;
         color: white;
     }
-    5000 {
+    5500 {
         color: !#87b9ef;
+        transform[outCubic]: scaleY(1);
     }
+    6500 { transform[outCubic]: scaleY(8); }
+    6600 { transform: scaleY(1); }
 }

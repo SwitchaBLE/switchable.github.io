@@ -216,7 +216,7 @@ header {
 
 #scene2 {
     top: 0%;
-    background-color: #444;
+    background-color: #222;
     #clock {
         position: absolute;
         top: 50%;
@@ -232,9 +232,6 @@ header {
         }
     }
     #switchable-is {
-//        width: 14em;
-//        margin-left: -7em;
-//        left: 50%;
         width: 100%;
         text-align: center;
         font-size: 3em;
@@ -244,6 +241,9 @@ header {
         span {
             color: white;
             display: none;
+            -ms-transform-origin-y: 100%;
+            -webkit-transform-origin-y: 100%;
+            transform-origin-y: 100%;
         }
     }
 }
