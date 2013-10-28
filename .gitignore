@@ -9,3 +9,6 @@ Icon*
 
 .rbenv-version
 .rvmrc
+
+*.ai
+*.svg

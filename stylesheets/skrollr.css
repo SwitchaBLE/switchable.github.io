@@ -10,6 +10,7 @@ header { -skrollr-animation-name: header; }
 #tip { -skrollr-animation-name: tip; }
 #scene1 { -skrollr-animation-name: scene1; }
 #scene1 h1 { -skrollr-animation-name: scene1-h1; }
+
 #scene2 { -skrollr-animation-name: scene2; }
 #clock { -skrollr-animation-name: clock; }
 #clock .clock-hour { -skrollr-animation-name: clock-hour; }
@@ -20,14 +21,25 @@ header { -skrollr-animation-name: header; }
 #device { -skrollr-animation-name: device; }
 #design { -skrollr-animation-name: design; }
 
+#scene3 { -skrollr-animation-name: scene3; }
+#explanation { -skrollr-animation-name: explanation; }
+#explanation p:nth-of-type(1) { -skrollr-animation-name: explanation-1; }
+#svg-device { -skrollr-animation-name: svg-device; }
+#scene3 #svg-device .path-set-1 { -skrollr-animation-name: device-path-set-1; }
+#scene3 #svg-device .path-set-2 { -skrollr-animation-name: device-path-set-2; }
+#scene3 #svg-device .path-set-3 { -skrollr-animation-name: device-path-set-3; }
+#device-emblem { -skrollr-animation-name: device-emblem; }
+#svg-lightbulb { -skrollr-animation-name: svg-lightbulb; }
+#scene3 #svg-lightbulb .path-set-1 { -skrollr-animation-name: lightbulb-path-set-1; }
+#scene3 #svg-lightbulb .path-set-2 { -skrollr-animation-name: lightbulb-path-set-2; }
+#scene3 #svg-lightbulb .path-set-3 { -skrollr-animation-name: lightbulb-path-set-3; }
+#lightbulb-light { -skrollr-animation-name: lightbulb-light; }
+
 
 @-skrollr-keyframes nav {
-    0 {
-        background-color[begin]: rgba(255, 255, 255, 0);
-    }
-    2600 {
-        background-color[end]: rgba(255, 255, 255, 1);
-    }
+    0 { background-color[begin]: rgba(255, 255, 255, 0); }
+    2600 { background-color[end]: rgba(255, 255, 255, 1); }
+    6600 { background-color[begin]: rgba(255, 255, 255, 0); }
 }
 
 @-skrollr-keyframes nav-about {
@@ -201,4 +213,63 @@ header { -skrollr-animation-name: header; }
     }
     6500 { transform[outCubic]: scaleY(8); }
     6600 { transform: scaleY(1); }
+}
+
+@-skrollr-keyframes scene3 {
+    4500 { opacity: 0; }
+    5500 { opacity: 1; }
+}
+
+@-skrollr-keyframes explanation {
+    6600 { margin-top: 2em; }
+    15000 { margin-top: 0; }
+}
+
+@-skrollr-keyframes explanation-1 {
+    6600 { opacity: 0; }
+    8500 { opacity: 1; }
+}
+
+@-skrollr-keyframes svg-device {
+    5500 { margin-top: 5em; }
+    9000 { margin-top: -7.5em; }
+}
+
+@-skrollr-keyframes device-path-set-1 {
+    7500 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes device-path-set-2 {
+    8500 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes device-path-set-3 {
+    9000 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes device-emblem {
+    5500 { fill: none; }
+    9000 { fill: !#6597cf; }
+}
+
+@-skrollr-keyframes svg-lightbulb {
+    4500 { margin-top: 50em; }
+    9000 { margin-top: -6.3em; }
+}
+
+@-skrollr-keyframes lightbulb-path-set-1 {
+    7500 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes lightbulb-path-set-2 {
+    8500 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes lightbulb-path-set-3 {
+    9010 { stroke-dashoffset: 0 }
+}
+
+@-skrollr-keyframes lightbulb-light {
+    4500 { visibility: hidden; }
+    15000 { visibility: visible; }
 }
