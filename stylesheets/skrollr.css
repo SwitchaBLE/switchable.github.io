@@ -1,4 +1,3 @@
-nav { -skrollr-animation-name: nav; }
 nav a[href='#about'] { -skrollr-animation-name: nav-about; }
 nav a[href='#team'] { -skrollr-animation-name: nav-team; }
 nav a[href='#photos'] { -skrollr-animation-name: nav-photos; }
@@ -48,25 +47,12 @@ header { -skrollr-animation-name: header; }
 #signal div:nth-child(1) { -skrollr-animation-name: signal-4; }
 
 
-@-skrollr-keyframes nav {
-    0 { background-color[begin]: rgba(255, 255, 255, 0); }
-    2600 { background-color[end]: rgba(255, 255, 255, 1); }
-    6600 { background-color[begin]: rgba(255, 255, 255, 0); }
-}
+
 
 @-skrollr-keyframes nav-about {
-    0 {
-        color[begin]: rgb(170, 170, 170);
-        //border-bottom-width[begin]: 0px;
-    }
-    1000 {
-        color[begin]: rgb(101, 151, 207);
-        //border-bottom-width[begin]: 1px;
-    }
-    5500 {
-        color[begin]: rgb(170, 170, 170);
-        //border-bottom-width[end]: 0px;
-    }
+    0 { color[begin]: rgb(170, 170, 170); }
+    1000 { color[begin]: rgb(101, 151, 207); }
+    20000 { color[begin]: rgb(170, 170, 170); }
 }
 
 @-skrollr-keyframes mini-logo {
