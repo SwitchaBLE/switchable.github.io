@@ -284,4 +284,24 @@ header {
         height: 23em;
         #lightbulb-shading { visibility: hidden; }
     }
+    #svg-phone {
+        display: block;
+        width: 10em;
+        height: 17em;
+        margin-top: 3em;
+    }
+    #signal {
+        margin-top: -7em;
+        margin-left: 7em;
+        div {
+            border-radius: 50%;
+            position: absolute;
+            z-index: -1;
+            opacity: .8;
+            &:nth-child(1) { background-color: @blue; }
+            &:nth-child(2) { background-color: lighten(@blue, 10%); }
+            &:nth-child(3) { background-color: lighten(@blue, 20%); }
+            &:nth-child(4) { background-color: lighten(@blue, 30%); }
+        }
+    }
 }

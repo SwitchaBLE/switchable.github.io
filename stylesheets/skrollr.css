@@ -24,16 +24,28 @@ header { -skrollr-animation-name: header; }
 #scene3 { -skrollr-animation-name: scene3; }
 #explanation { -skrollr-animation-name: explanation; }
 #explanation p:nth-of-type(1) { -skrollr-animation-name: explanation-1; }
+#explanation p:nth-of-type(2) { -skrollr-animation-name: explanation-2; }
+#explanation p:nth-of-type(3) { -skrollr-animation-name: explanation-3; }
+#explanation p:nth-of-type(4) { -skrollr-animation-name: explanation-4; }
+#explanation p:nth-of-type(5) { -skrollr-animation-name: explanation-5; }
 #svg-device { -skrollr-animation-name: svg-device; }
-#scene3 #svg-device .path-set-1 { -skrollr-animation-name: device-path-set-1; }
-#scene3 #svg-device .path-set-2 { -skrollr-animation-name: device-path-set-2; }
-#scene3 #svg-device .path-set-3 { -skrollr-animation-name: device-path-set-3; }
+#svg-device .path-set-1 { -skrollr-animation-name: device-path-set-1; }
+#svg-device .path-set-2 { -skrollr-animation-name: device-path-set-2; }
+#svg-device .path-set-3 { -skrollr-animation-name: device-path-set-3; }
 #device-emblem { -skrollr-animation-name: device-emblem; }
 #svg-lightbulb { -skrollr-animation-name: svg-lightbulb; }
-#scene3 #svg-lightbulb .path-set-1 { -skrollr-animation-name: lightbulb-path-set-1; }
-#scene3 #svg-lightbulb .path-set-2 { -skrollr-animation-name: lightbulb-path-set-2; }
-#scene3 #svg-lightbulb .path-set-3 { -skrollr-animation-name: lightbulb-path-set-3; }
+#svg-lightbulb .path-set-1 { -skrollr-animation-name: lightbulb-path-set-1; }
+#svg-lightbulb .path-set-2 { -skrollr-animation-name: lightbulb-path-set-2; }
+#svg-lightbulb .path-set-3 { -skrollr-animation-name: lightbulb-path-set-3; }
 #lightbulb-light { -skrollr-animation-name: lightbulb-light; }
+#svg-phone { -skrollr-animation-name: svg-phone; }
+#svg-phone .path-set-1 { -skrollr-animation-name: phone-path-set-1; }
+#svg-phone .path-set-2 path { -skrollr-animation-name: phone-path-set-2; }
+#svg-phone #phone-time path { -skrollr-animation-name: phone-time; }
+#signal div:nth-child(4) { -skrollr-animation-name: signal-1; }
+#signal div:nth-child(3) { -skrollr-animation-name: signal-2; }
+#signal div:nth-child(2) { -skrollr-animation-name: signal-3; }
+#signal div:nth-child(1) { -skrollr-animation-name: signal-4; }
 
 
 @-skrollr-keyframes nav {
@@ -115,12 +127,10 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes scene1 {
-    0 {
-        opacity: 0;
-    }
-    1000 {
-        opacity: 1;
-    }
+    0 { opacity: 0; }
+    1000 { opacity: 1; }
+    2499 { display: block; }
+    2500 { display: none; }
 }
 
 @-skrollr-keyframes scene1-h1 {
@@ -142,11 +152,18 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes scene2 {
-    2400 { opacity: 0; }
+    2399 { display: none; }
+    2400 {
+        opacity: 0;
+        display: block;
+    }
     2500 { opacity: 1; }
     5500 { top[outCubic]: 0%; }
     6500 { top[outCubic]: -10%; }
-    6600 { top: -100%; }
+    6600 {
+        top: -100%;
+        display: none;
+    }
 }
 
 @-skrollr-keyframes clock {
@@ -216,12 +233,16 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes scene3 {
-    4500 { opacity: 0; }
+    4499 { display: none; }
+    4500 {
+        opacity: 0;
+        display: block;
+    }
     5500 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation {
-    6600 { margin-top: 2em; }
+    6600 { margin-top: 3em; }
     15000 { margin-top: 0; }
 }
 
@@ -230,46 +251,151 @@ header { -skrollr-animation-name: header; }
     8500 { opacity: 1; }
 }
 
+@-skrollr-keyframes explanation-2 {
+    9000 { opacity: 0; }
+    10500 { opacity: 1; }
+}
+
+@-skrollr-keyframes explanation-3 {
+    11000 { opacity: 0; }
+    13000 { opacity: 1; }
+}
+
+@-skrollr-keyframes explanation-4 {
+    13500 { opacity: 0; }
+    15500 { opacity: 1; }
+}
+
+@-skrollr-keyframes explanation-5 {
+    17500 { opacity: 0; }
+    18000 { opacity: 1; }
+}
+
 @-skrollr-keyframes svg-device {
     5500 { margin-top: 5em; }
-    9000 { margin-top: -7.5em; }
+    8500 { margin-top: -7.5em; }
 }
 
 @-skrollr-keyframes device-path-set-1 {
-    7500 { stroke-dashoffset: 0 }
+    7000 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes device-path-set-2 {
-    8500 { stroke-dashoffset: 0 }
+    8000 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes device-path-set-3 {
-    9000 { stroke-dashoffset: 0 }
+    8500 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes device-emblem {
     5500 { fill: none; }
-    9000 { fill: !#6597cf; }
+    8500 { fill: !#6597cf; }
 }
 
 @-skrollr-keyframes svg-lightbulb {
     4500 { margin-top: 50em; }
-    9000 { margin-top: -6.3em; }
+    8500 { margin-top: -6.3em; }
 }
 
 @-skrollr-keyframes lightbulb-path-set-1 {
-    7500 { stroke-dashoffset: 0 }
+    7000 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes lightbulb-path-set-2 {
-    8500 { stroke-dashoffset: 0 }
+    8000 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes lightbulb-path-set-3 {
-    9010 { stroke-dashoffset: 0 }
+    8500 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes lightbulb-light {
     4500 { visibility: hidden; }
-    15000 { visibility: visible; }
+    18000 { visibility: visible; }
+}
+
+@-skrollr-keyframes svg-phone {
+    8500 { margin-left: -10em; }
+    10500 { margin-left: 2em; }
+}
+
+@-skrollr-keyframes phone-path-set-1 {
+    9500 { stroke-dashoffset: 0; }
+}
+
+@-skrollr-keyframes phone-path-set-2 {
+    10500 { stroke-dashoffset: 0; }
+}
+
+@-skrollr-keyframes phone-time {
+    13000 { stroke-dashoffset: 0; }
+}
+
+@-skrollr-keyframes signal-1 {
+    14500 {
+        width: 0em;
+        height: 0em;
+        margin-top: 0em;
+        margin-left: 0em;
+        opacity: .8;
+    }
+    18500 {
+        width: 200em;
+        height: 200em;
+        margin-top: -100em;
+        margin-left: -100em;
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes signal-2 {
+    15000 {
+        width: 0em;
+        height: 0em;
+        margin-top: 0em;
+        margin-left: 0em;
+        opacity: .8;
+    }
+    19000 {
+        width: 200em;
+        height: 200em;
+        margin-top: -100em;
+        margin-left: -100em;
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes signal-3 {
+    15500 {
+        width: 0em;
+        height: 0em;
+        margin-top: 0em;
+        margin-left: 0em;
+        opacity: .8;
+    }
+    19500 {
+        width: 200em;
+        height: 200em;
+        margin-top: -100em;
+        margin-left: -100em;
+        opacity: 0;
+    }
+}
+
+@-skrollr-keyframes signal-4 {
+    16000 {
+        width: 0em;
+        height: 0em;
+        margin-top: 0em;
+        margin-left: 0em;
+        opacity: .8;
+    }
+    20000 {
+        width: 200em;
+        height: 200em;
+        margin-top: -100em;
+        margin-left: -100em;
+        opacity: 0;
+    }
 }
