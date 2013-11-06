@@ -1,3 +1,4 @@
+nav { -skrollr-animation-name: nav; }
 nav a[href='#about'] { -skrollr-animation-name: nav-about; }
 nav a[href='#team'] { -skrollr-animation-name: nav-team; }
 nav a[href='#photos'] { -skrollr-animation-name: nav-photos; }
@@ -45,14 +46,26 @@ header { -skrollr-animation-name: header; }
 #signal div:nth-child(3) { -skrollr-animation-name: signal-2; }
 #signal div:nth-child(2) { -skrollr-animation-name: signal-3; }
 #signal div:nth-child(1) { -skrollr-animation-name: signal-4; }
+#svgs { -skrollr-animation-name: svgs; }
+
+#scene4 { -skrollr-animation-name: scene4; }
 
 
-
+@-skrollr-keyframes nav {
+    20000 { background-color: rgba(255, 255, 255, 0); }
+    21000 { background-color: rgba(255, 255, 255, 1); }
+}
 
 @-skrollr-keyframes nav-about {
     0 { color[begin]: rgb(170, 170, 170); }
     1000 { color[begin]: rgb(101, 151, 207); }
     20000 { color[begin]: rgb(170, 170, 170); }
+}
+
+@-skrollr-keyframes nav-team {
+    0 { color[begin]: rgb(170, 170, 170); }
+    21500 { color[begin]: rgb(101, 151, 207); }
+    29000 { color[begin]: rgb(170, 170, 170); }
 }
 
 @-skrollr-keyframes mini-logo {
@@ -384,4 +397,14 @@ header { -skrollr-animation-name: header; }
         margin-left: -100em;
         opacity: 0;
     }
+}
+
+@-skrollr-keyframes svgs {
+    19500 { transform[cubic]: scale(1); }
+    21500 { transform[cubic]: scale(200); }
+}
+
+@-skrollr-keyframes scene4 {
+    21499 { display: none; }
+    21500 { display: block; }
 }
