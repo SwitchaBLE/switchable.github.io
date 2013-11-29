@@ -222,6 +222,8 @@ header {
     top: 0%;
     background-color: #222;
     #clock {
+        width: @clock-size;
+        display: inline-block;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -237,6 +239,7 @@ header {
         }
     }
     #switchable-is {
+        //-webkit-transform: translateZ(0);
         width: 100%;
         text-align: center;
         font-size: 3em;
@@ -255,9 +258,13 @@ header {
 }
 
 #scene3 {
-    
     #explanation {
+        -webkit-transform: translateZ(0);
         padding: 2em 0 0 2em;
+        p:nth-child(5) {
+            position: fixed;
+            left: 2em;
+        }
     }
     
     @media (max-width: 320px) {
@@ -266,7 +273,8 @@ header {
         }
     }
     
-    #svgs {
+    #lightbulb-column {
+        float: right;
         -ms-transform-origin: 34% 5%;
         -moz-transform-origin: 34% 5%;
         -webkit-transform-origin: 7em 1em;
@@ -275,26 +283,20 @@ header {
     
     #svg-device {
         display: block;
-        //margin-top: -8em;
         z-index: 1;
-        //position: absolute;
-        //right: 5em;
-        //width: 10em;
-        //height: 15em;
-        //width: 100%;
         width: 8em;
         height: 13em;
         position: relative;
         margin-left: 2.5em;
-        #device-shading { visibility: hidden; }
     }
     #svg-lightbulb {
         display: block;
-        //position: absolute;
-        //right: 3em;
-        width: 14em;
-        height: 23em;
-        #lightbulb-shading { visibility: hidden; }
+        width: 150em;
+        height: 45em;
+        margin-left: -27em;
+        .light {
+            display: none;
+        }
     }
     #svg-phone {
         display: block;
@@ -310,10 +312,10 @@ header {
             position: absolute;
             z-index: -1;
             opacity: .8;
-            &:nth-child(1) { background-color: @blue; }
+            &:nth-child(1) { background-color: lighten(@blue, 15%); }
             &:nth-child(2) { background-color: lighten(@blue, 10%); }
-            &:nth-child(3) { background-color: lighten(@blue, 20%); }
-            &:nth-child(4) { background-color: lighten(@blue, 30%); }
+            &:nth-child(3) { background-color: lighten(@blue, 5%); }
+            &:nth-child(4) { background-color: lighten(@blue, 0%); }
         }
     }
 }

@@ -29,9 +29,10 @@ header { -skrollr-animation-name: header; }
 #explanation p:nth-of-type(4) { -skrollr-animation-name: explanation-4; }
 #explanation p:nth-of-type(5) { -skrollr-animation-name: explanation-5; }
 #svg-device { -skrollr-animation-name: svg-device; }
-#svg-device .path-set-1 { -skrollr-animation-name: device-path-set-1; }
-#svg-device .path-set-2 { -skrollr-animation-name: device-path-set-2; }
-#svg-device .path-set-3 { -skrollr-animation-name: device-path-set-3; }
+#svg-device .guides-front *, #svg-device .guides-back * { -skrollr-animation-name: device-guides; }
+#svg-device .outlines * { -skrollr-animation-name: device-outlines; }
+#svg-device .inner * { -skrollr-animation-name: device-inner; }
+#svg-device .shading * { -skrollr-animation-name: device-shading; }
 #device-emblem { -skrollr-animation-name: device-emblem; }
 #svg-lightbulb { -skrollr-animation-name: svg-lightbulb; }
 #svg-lightbulb .path-set-1 { -skrollr-animation-name: lightbulb-path-set-1; }
@@ -46,7 +47,8 @@ header { -skrollr-animation-name: header; }
 #signal div:nth-child(3) { -skrollr-animation-name: signal-2; }
 #signal div:nth-child(2) { -skrollr-animation-name: signal-3; }
 #signal div:nth-child(1) { -skrollr-animation-name: signal-4; }
-#svgs { -skrollr-animation-name: svgs; }
+#lightbulb-column { -skrollr-animation-name: lightbulb-column; }
+#phone-column { -skrollr-animation-name: phone-column; }
 
 #scene4 { -skrollr-animation-name: scene4; }
 
@@ -58,7 +60,7 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes nav-about {
     0 { color[begin]: rgb(170, 170, 170); }
-    1000 { color[begin]: rgb(101, 151, 207); }
+    1700 { color[begin]: rgb(101, 151, 207); }
     20000 { color[begin]: rgb(170, 170, 170); }
 }
 
@@ -73,11 +75,11 @@ header { -skrollr-animation-name: header; }
         width: 0em;
         opacity: 0;
     }
-    900 {
+    1400 {
         width: 2.25em;
         opacity: 0;
     }
-    1000 {
+    1700 {
         width: 2.5em;
         opacity: 1;
     }
@@ -89,7 +91,7 @@ header { -skrollr-animation-name: header; }
         padding-left: 5%;
         padding-top: 12em;
     }
-    1000 {
+    1700 {
         opacity: 0;
         padding-left: 1%;
         padding-top: 0.35em;
@@ -100,7 +102,7 @@ header { -skrollr-animation-name: header; }
     0 {
         transform[overshootStart]: rotate(0deg);
     }
-    1000 {
+    1700 {
         transform[overshootStart]: rotate(180deg);
     }
 }
@@ -109,7 +111,7 @@ header { -skrollr-animation-name: header; }
     0 {
         font-size[overshootStart]: 4.5em;
     }
-    1000 {
+    1700 {
         font-size[overshootStart]: .4em;
     }
 }
@@ -119,7 +121,7 @@ header { -skrollr-animation-name: header; }
         right[overshootStart]: 5%;
         opacity: 1;
     }
-    1000 {
+    1700 {
         right[overshootStart]: 100%;
         opacity: 0;
     }
@@ -127,9 +129,7 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes scene1 {
     0 { opacity: 0; }
-    1000 { opacity: 1; }
-    2499 { display: block; }
-    2500 { display: none; }
+    1700 { opacity: 1; }
 }
 
 @-skrollr-keyframes scene1-h1 {
@@ -137,198 +137,147 @@ header { -skrollr-animation-name: header; }
         left[overshootStart]: 100%;
         top: 100px;
     }
-    1000 {
+    1700 {
         left[overshootStart]: 10%;
-        top: 140px;
+        top: 102px;
     }
-    2000 {
+    3000 {
         top: 180px;
         transform[swing]: scale(1);
     }
-    2500 {
+    4000 {
         transform[swing]: scale(200);
     }
 }
 
 @-skrollr-keyframes scene2 {
-    2399 { display: none; }
-    2400 {
+    4000 {
         opacity: 0;
-        display: block;
+        -webkit-transform[begin]: none;
     }
-    2500 { opacity: 1; }
-    5500 { top[outCubic]: 0%; }
-    6500 { top[outCubic]: -10%; }
-    6600 {
-        top: -100%;
-        display: none;
+    4100 { opacity: 1; }
+    8000 {
+        top[outCubic]: 0%;
+        -webkit-transform[begin]: !translateZ(0);
     }
+    9000 { top[outCubic]: -10%; }
+    9200 { top: -100%; }
 }
 
 @-skrollr-keyframes clock {
-    2500 {
-        transform[outCubic]: scale(1000);
-    }
-    3000 {
+    4000 { transform[outCubic]: scale(1000); }
+    5000 {
         transform[outCubic]: scale(1);
         top[quadratic]: 50%;
         opacity: 1;
     }
-    5500 {
+    9000 {
         top[quadratic]: 10%;
         opacity: 0;
     }
 }
 
 @-skrollr-keyframes clock-hour {
-    2600 {
+    4000 {
         transform: rotate(0deg);
     }
-    5500 {
+    9000 {
         transform: rotate(90deg);
     }
 }
 
 @-skrollr-keyframes clock-minute {
-    2600 { transform: rotate(90deg); }
-    5500 { transform: rotate(1170deg); }
+    4000 { transform: rotate(90deg); }
+    9000 { transform: rotate(1170deg); }
 }
 
 @-skrollr-keyframes switchable-is {
-    2500 { top[cubic]: 60%; }
-    5500 { top[cubic]: 80%; }
+    4000 { top[cubic]: 60%; }
+    8000 { top[cubic]: 80%; }
     
 }
 
-@-skrollr-keyframes alarm-clock {
-    0 { display: block; }
-    3500 { display: none; }
-}
+
 
 @-skrollr-keyframes app {
-    2500 { display: none; }
-    3500 { display: block; }
-    4000 { display: none; }
+    4000 { display: block; }
+    6000 { display: none; }
 }
 
 @-skrollr-keyframes device {
-    2500 { display: none; }
-    4000 { display: block; }
-    4500 { display: none; }
+    4000 { display: none; }
+    6000 { display: block; }
+    7000 { display: none; }
 }
 
 @-skrollr-keyframes design {
-    2500 { display: none; }
-    4500 {
+    4000 { display: none; }
+    7000 {
         display: block;
         color: white;
     }
-    5500 {
+    8000 {
         color: !#87b9ef;
         transform[outCubic]: scaleY(1);
     }
-    6500 { transform[outCubic]: scaleY(8); }
-    6600 { transform: scaleY(1); }
+    9000 { transform[outCubic]: scaleY(8); }
+    9200 { transform: scaleY(1); }
 }
 
 @-skrollr-keyframes scene3 {
-    4499 { display: none; }
-    4500 {
-        opacity: 0;
-        display: block;
-    }
-    5500 { opacity: 1; }
+    8999 { opacity: 0; }
+    9000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation {
-    6600 { margin-top: 3em; }
-    15000 { margin-top: 0; }
+    9200 { margin-top: 3em; }
+    17000 { margin-top: 0; }
 }
 
 @-skrollr-keyframes explanation-1 {
-    6600 { opacity: 0; }
-    8500 { opacity: 1; }
+    9200 { opacity: 0; }
+    12000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-2 {
-    9000 { opacity: 0; }
-    10500 { opacity: 1; }
+    11500 { opacity: 0; }
+    14000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-3 {
-    11000 { opacity: 0; }
-    13000 { opacity: 1; }
+    13000 { opacity: 0; }
+    15000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-4 {
-    13500 { opacity: 0; }
-    15500 { opacity: 1; }
+    14000 { opacity: 0; }
+    16500 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-5 {
-    17500 { opacity: 0; }
-    18000 { opacity: 1; }
+    15500 {
+        opacity: 0;
+        margin-left[outCubic]: 0%;
+    }
+    21500 {
+        margin-left[outCubic]: 33%;
+        opacity: 1;
+    }
 }
 
 @-skrollr-keyframes svg-device {
-    5500 { margin-top: 5em; }
-    8500 { margin-top: -7.5em; }
-}
-
-@-skrollr-keyframes device-path-set-1 {
-    7000 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes device-path-set-2 {
-    8000 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes device-path-set-3 {
-    8500 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes device-emblem {
-    5500 { fill: none; }
-    8500 { fill: !#6597cf; }
+    9200 { margin-top: 5em; }
+    13000 { margin-top: -7em; }
 }
 
 @-skrollr-keyframes svg-lightbulb {
-    4500 { margin-top: 50em; }
-    8500 { margin-top: -6.3em; }
-}
-
-@-skrollr-keyframes lightbulb-path-set-1 {
-    7000 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes lightbulb-path-set-2 {
-    8000 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes lightbulb-path-set-3 {
-    8500 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes lightbulb-light {
-    4500 { visibility: hidden; }
-    18000 { visibility: visible; }
+    9200 { margin-top: 10em; }
+    13000 { margin-top: -6.3em; }
 }
 
 @-skrollr-keyframes svg-phone {
     8500 { margin-left: -10em; }
     10500 { margin-left: 2em; }
-}
-
-@-skrollr-keyframes phone-path-set-1 {
-    9500 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes phone-path-set-2 {
-    10500 { stroke-dashoffset: 0; }
-}
-
-@-skrollr-keyframes phone-time {
-    13000 { stroke-dashoffset: 0; }
 }
 
 @-skrollr-keyframes signal-1 {
@@ -337,7 +286,7 @@ header { -skrollr-animation-name: header; }
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
-        opacity: .8;
+        opacity: 1;
     }
     18500 {
         width: 200em;
@@ -354,7 +303,7 @@ header { -skrollr-animation-name: header; }
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
-        opacity: .8;
+        opacity: 1;
     }
     19000 {
         width: 200em;
@@ -371,7 +320,7 @@ header { -skrollr-animation-name: header; }
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
-        opacity: .8;
+        opacity: 1;
     }
     19500 {
         width: 200em;
@@ -388,7 +337,7 @@ header { -skrollr-animation-name: header; }
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
-        opacity: .8;
+        opacity: 1;
     }
     20000 {
         width: 200em;
@@ -399,9 +348,14 @@ header { -skrollr-animation-name: header; }
     }
 }
 
-@-skrollr-keyframes svgs {
-    19500 { transform[cubic]: scale(1); }
-    21500 { transform[cubic]: scale(200); }
+@-skrollr-keyframes phone-column {
+    16000 { margin-left: 0em; }
+    21500 { margin-left: -50em; }
+}
+
+@-skrollr-keyframes lightbulb-column {
+    16000 { margin-right[cubic]: 0em; }
+    21500 { margin-right[cubic]: -40em; }
 }
 
 @-skrollr-keyframes scene4 {
