@@ -22,6 +22,7 @@ header { -skrollr-animation-name: header; }
 #design { -skrollr-animation-name: design; }
 
 #scene3 { -skrollr-animation-name: scene3; }
+#scene3 .row { -skrollr-animation-name: scene3-row; }
 #explanation { -skrollr-animation-name: explanation; }
 #explanation p:nth-of-type(1) { -skrollr-animation-name: explanation-1; }
 #explanation p:nth-of-type(2) { -skrollr-animation-name: explanation-2; }
@@ -29,20 +30,10 @@ header { -skrollr-animation-name: header; }
 #explanation p:nth-of-type(4) { -skrollr-animation-name: explanation-4; }
 #explanation p:nth-of-type(5) { -skrollr-animation-name: explanation-5; }
 #svg-device { -skrollr-animation-name: svg-device; }
-#svg-device .guides-front *, #svg-device .guides-back * { -skrollr-animation-name: device-guides; }
-#svg-device .outlines * { -skrollr-animation-name: device-outlines; }
-#svg-device .inner * { -skrollr-animation-name: device-inner; }
-#svg-device .shading * { -skrollr-animation-name: device-shading; }
-#device-emblem { -skrollr-animation-name: device-emblem; }
 #svg-lightbulb { -skrollr-animation-name: svg-lightbulb; }
-#svg-lightbulb .path-set-1 { -skrollr-animation-name: lightbulb-path-set-1; }
-#svg-lightbulb .path-set-2 { -skrollr-animation-name: lightbulb-path-set-2; }
-#svg-lightbulb .path-set-3 { -skrollr-animation-name: lightbulb-path-set-3; }
-#lightbulb-light { -skrollr-animation-name: lightbulb-light; }
+#svg-lightbulb .light * { -skrollr-animation-name: lightbulb-light; }
 #svg-phone { -skrollr-animation-name: svg-phone; }
-#svg-phone .path-set-1 { -skrollr-animation-name: phone-path-set-1; }
-#svg-phone .path-set-2 path { -skrollr-animation-name: phone-path-set-2; }
-#svg-phone #phone-time path { -skrollr-animation-name: phone-time; }
+#signal { -skrollr-animation-name: signal; }
 #signal div:nth-child(4) { -skrollr-animation-name: signal-1; }
 #signal div:nth-child(3) { -skrollr-animation-name: signal-2; }
 #signal div:nth-child(2) { -skrollr-animation-name: signal-3; }
@@ -55,7 +46,7 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes nav {
     20000 { background-color: rgba(255, 255, 255, 0); }
-    21000 { background-color: rgba(255, 255, 255, 1); }
+    
 }
 
 @-skrollr-keyframes nav-about {
@@ -129,7 +120,11 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes scene1 {
     0 { opacity: 0; }
-    1700 { opacity: 1; }
+    1700 {
+        opacity: 1;
+        display: block;
+    }
+    4100 { display: none; }
 }
 
 @-skrollr-keyframes scene1-h1 {
@@ -197,8 +192,6 @@ header { -skrollr-animation-name: header; }
     
 }
 
-
-
 @-skrollr-keyframes app {
     4000 { display: block; }
     6000 { display: none; }
@@ -226,7 +219,22 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes scene3 {
     8999 { opacity: 0; }
-    9000 { opacity: 1; }
+    9000 {
+        opacity: 1;
+        -webkit-transform: none;
+    }
+    18500 { -webkit-transform: !translateZ(0); }
+}
+
+@-skrollr-keyframes scene3-row {
+    9000 {
+        -webkit-backface-visibility: visible;
+        -webkit-perspective: none;
+    }
+    18500 {
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: !1000;
+    }
 }
 
 @-skrollr-keyframes explanation {
@@ -245,22 +253,22 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes explanation-3 {
-    13000 { opacity: 0; }
-    15000 { opacity: 1; }
+    15000 { opacity: 0; }
+    18000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-4 {
-    14000 { opacity: 0; }
-    16500 { opacity: 1; }
+    17000 { opacity: 0; }
+    20000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation-5 {
-    15500 {
+    20000 {
         opacity: 0;
-        margin-left[outCubic]: 0%;
+        margin-left: 0em;
     }
-    21500 {
-        margin-left[outCubic]: 33%;
+    30000 {
+        margin-left: 155em;
         opacity: 1;
     }
 }
@@ -280,32 +288,31 @@ header { -skrollr-animation-name: header; }
     10500 { margin-left: 2em; }
 }
 
+@-skrollr-keyframes signal {
+    0 { display: none; }
+    18500 { display: block; }
+}
+
 @-skrollr-keyframes signal-1 {
-    14500 {
-        width: 0em;
-        height: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
+    18500 {
+        transform: scale(0);
         opacity: 1;
     }
-    18500 {
-        width: 200em;
-        height: 200em;
-        margin-top: -100em;
-        margin-left: -100em;
+    22500 {
+        transform: scale(1);
         opacity: 0;
     }
 }
 
 @-skrollr-keyframes signal-2 {
-    15000 {
+    19500 {
         width: 0em;
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
         opacity: 1;
     }
-    19000 {
+    23500 {
         width: 200em;
         height: 200em;
         margin-top: -100em;
@@ -315,14 +322,14 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes signal-3 {
-    15500 {
+    20500 {
         width: 0em;
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
         opacity: 1;
     }
-    19500 {
+    24500 {
         width: 200em;
         height: 200em;
         margin-top: -100em;
@@ -332,14 +339,14 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes signal-4 {
-    16000 {
+    21500 {
         width: 0em;
         height: 0em;
         margin-top: 0em;
         margin-left: 0em;
         opacity: 1;
     }
-    20000 {
+    25500 {
         width: 200em;
         height: 200em;
         margin-top: -100em;
@@ -349,16 +356,15 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes phone-column {
-    16000 { margin-left: 0em; }
-    21500 { margin-left: -50em; }
+    20000 { margin-left: 0em; }
+    30000 { margin-left: -150em; }
 }
 
 @-skrollr-keyframes lightbulb-column {
-    16000 { margin-right[cubic]: 0em; }
-    21500 { margin-right[cubic]: -40em; }
+    20000 { margin-right[swing]: 0em; }
+    30000 { margin-right[swing]: 150em; }
 }
 
 @-skrollr-keyframes scene4 {
     21499 { display: none; }
-    21500 { display: block; }
 }

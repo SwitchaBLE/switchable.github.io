@@ -239,7 +239,6 @@ header {
         }
     }
     #switchable-is {
-        //-webkit-transform: translateZ(0);
         width: 100%;
         text-align: center;
         font-size: 3em;
@@ -258,12 +257,18 @@ header {
 }
 
 #scene3 {
+//    -webkit-transform: translateZ(0);
+//    .row {
+//        -webkit-backface-visibility: hidden;
+//        -webkit-perspective: 1000;
+//    }
     #explanation {
         -webkit-transform: translateZ(0);
         padding: 2em 0 0 2em;
         p:nth-child(5) {
             position: fixed;
             left: 2em;
+            white-space: nowrap;
         }
     }
     
@@ -280,7 +285,6 @@ header {
         -webkit-transform-origin: 7em 1em;
         transform-origin: 34% 5%;
     }
-    
     #svg-device {
         display: block;
         z-index: 1;
@@ -294,9 +298,6 @@ header {
         width: 150em;
         height: 45em;
         margin-left: -27em;
-        .light {
-            display: none;
-        }
     }
     #svg-phone {
         display: block;
@@ -305,17 +306,14 @@ header {
         margin-top: 3em;
     }
     #signal {
+        z-index: -1;
         margin-top: -7em;
         margin-left: 7em;
         div {
+            border: 3px solid @blue;
             border-radius: 50%;
             position: absolute;
             z-index: -1;
-            opacity: .8;
-            &:nth-child(1) { background-color: lighten(@blue, 15%); }
-            &:nth-child(2) { background-color: lighten(@blue, 10%); }
-            &:nth-child(3) { background-color: lighten(@blue, 5%); }
-            &:nth-child(4) { background-color: lighten(@blue, 0%); }
         }
     }
 }
