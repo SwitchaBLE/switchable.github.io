@@ -320,6 +320,7 @@ header {
 #scene4 {
     
     #pic-container {
+        margin-top: -@nav-height;
         font-size: 0;
         position: absolute;
         width: 100%;
@@ -341,14 +342,26 @@ header {
         width: 100%;
         bottom: 0;
         height: 10em;
-        max-height: 50%;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-top: 1px solid white;
-        box-shadow: 0 0 10px black;
+        background-color: rgba(0, 0, 0, 0.4);
         white-space: nowrap;
         & > div {
             display: inline-block;
             width: 110%;
+            padding: 1em;
+            h2 {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 3em;
+                line-height: 1;
+                color: white;
+            }
+            h6 {
+                font-size: 1em;
+                line-height: 1;
+                color: #222;
+                text-transform: uppercase;
+                color: white;
+            }
         }
     }
 }

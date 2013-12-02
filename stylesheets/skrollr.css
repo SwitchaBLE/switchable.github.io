@@ -48,14 +48,10 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes nav {
     29000 {
-        background-color: rgba(255, 255, 255, 0);
-        border-bottom: 0px solid rgba(255, 255, 255, 0);
-        box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
     }
     30000 {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-bottom: 1px solid rgba(255, 255, 255, 1);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -67,8 +63,8 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes nav-team {
     0 { color[begin]: rgb(170, 170, 170); }
-    21500 { color[begin]: rgb(101, 151, 207); }
-    29000 { color[begin]: rgb(170, 170, 170); }
+    30000 { color[begin]: rgb(101, 151, 207); }
+    49000 { color[begin]: rgb(170, 170, 170); }
 }
 
 @-skrollr-keyframes mini-logo {
@@ -400,11 +396,11 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes bios {
     30000 { transform: translateX(-300%); }
-    32500 { transform: translateX(-290%); }
+    32500 { transform: translateX(-297%); }
     33000 { transform: translateX(-200%); }
-    35500 { transform: translateX(-190%); }
+    35500 { transform: translateX(-197%); }
     36000 { transform: translateX(-100%); }
-    38500 { transform: translateX(-90%); }
+    38500 { transform: translateX(-97%); }
     39000 { transform: translateX(0%); }
-    41500 { transform: translateX(10%); }
+    41500 { transform: translateX(3%); }
 }
