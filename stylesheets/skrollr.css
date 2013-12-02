@@ -189,7 +189,6 @@ header { -skrollr-animation-name: header; }
 @-skrollr-keyframes switchable-is {
     4000 { top[cubic]: 60%; }
     8600 { top[cubic]: 80%; }
-    
 }
 
 @-skrollr-keyframes alarm-clock {
@@ -245,7 +244,7 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes explanation {
     9200 { margin-top: 3em; }
-    17000 { margin-top: 0; }
+    30000 { margin-top: 0em; }
 }
 
 @-skrollr-keyframes explanation-1 {
