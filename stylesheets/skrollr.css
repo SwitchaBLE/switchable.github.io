@@ -151,7 +151,7 @@ header { -skrollr-animation-name: header; }
         -webkit-transform[begin]: none;
     }
     4100 { opacity: 1; }
-    8000 {
+    8600 {
         top[outCubic]: 0%;
         -webkit-transform[begin]: !translateZ(0);
     }
@@ -188,28 +188,34 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes switchable-is {
     4000 { top[cubic]: 60%; }
-    8000 { top[cubic]: 80%; }
+    8600 { top[cubic]: 80%; }
     
 }
 
-@-skrollr-keyframes app {
+@-skrollr-keyframes alarm-clock {
     4000 { display: block; }
-    6000 { display: none; }
+    5400 { display: none; }
+}
+
+@-skrollr-keyframes app {
+    4000 { display: none; }
+    5400 { display: block; }
+    6800 { display: none; }
 }
 
 @-skrollr-keyframes device {
     4000 { display: none; }
-    6000 { display: block; }
-    7000 { display: none; }
+    6800 { display: block; }
+    8200 { display: none; }
 }
 
 @-skrollr-keyframes design {
     4000 { display: none; }
-    7000 {
+    8200 {
         display: block;
         color: white;
     }
-    8000 {
+    8600 {
         color: !#87b9ef;
         transform[outCubic]: scaleY(1);
     }
