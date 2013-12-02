@@ -318,5 +318,37 @@ header {
 }
 
 #scene4 {
-    background-color: @blue;
+    
+    #pic-container {
+        font-size: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        & > div {
+            display: inline-block;
+            width: 110%;
+            height: 100%;
+            background-size: cover;
+        }
+        #pic-esteban { background-image: url('../images/esteban.jpg'); }
+        #pic-brett { background-image: url('../images/brett.jpg'); }
+        #pic-derek { background-image: url('../images/derek.jpg'); }
+        #pic-andrew { background-image: url('../images/andrew.jpg'); }
+    }
+    #bio-container {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 10em;
+        max-height: 50%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-top: 1px solid white;
+        box-shadow: 0 0 10px black;
+        white-space: nowrap;
+        & > div {
+            display: inline-block;
+            width: 110%;
+        }
+    }
 }

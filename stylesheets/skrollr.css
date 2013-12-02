@@ -42,11 +42,21 @@ header { -skrollr-animation-name: header; }
 #phone-column { -skrollr-animation-name: phone-column; }
 
 #scene4 { -skrollr-animation-name: scene4; }
+#bio-container > div { -skrollr-animation-name: bios; }
+#pic-container > div { -skrollr-animation-name: pics; }
 
 
 @-skrollr-keyframes nav {
-    20000 { background-color: rgba(255, 255, 255, 0); }
-    
+    29000 {
+        background-color: rgba(255, 255, 255, 0);
+        border-bottom: 0px solid rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    }
+    30000 {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
 }
 
 @-skrollr-keyframes nav-about {
@@ -371,5 +381,30 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes scene4 {
-    21499 { display: none; }
+    29000 { transform: translate3d(0, 100%, 0); }
+    30000 { transform: translate3d(0, 0%, 0); }
+}
+
+@-skrollr-keyframes pics {
+    30000 { transform: translate3d(0%, 0, 0); }
+    32500 { transform: translate3d(-10%, 0, 0); }
+    33000 { transform: translate3d(-100%, 0, 0); }
+    35500 { transform: translate3d(-110%, 0, 0); }
+    36000 { transform: translate3d(-200%, 0, 0); }
+    38500 { transform: translate3d(-210%, 0, 0); }
+    39000 { transform: translate3d(-300%, 0, 0); }
+    41500 { transform: translate3d(-310%, 0, 0); }
+    42000 { transform: translate3d(-400%, 0, 0); }
+    44500 { transform: translate3d(-410%, 0, 0); }
+}
+
+@-skrollr-keyframes bios {
+    30000 { transform: translateX(-300%); }
+    32500 { transform: translateX(-290%); }
+    33000 { transform: translateX(-200%); }
+    35500 { transform: translateX(-190%); }
+    36000 { transform: translateX(-100%); }
+    38500 { transform: translateX(-90%); }
+    39000 { transform: translateX(0%); }
+    41500 { transform: translateX(10%); }
 }
