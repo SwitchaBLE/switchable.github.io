@@ -3,4 +3,6 @@ nav a:not(:first-child) { -skrollr-animation-name: nav-links; }
 @-skrollr-keyframes nav-links {
     8900 { opacity: 1; }
     9000 { opacity: 0; }
+    21000 { opacity: 0; }
+    23500 { opacity: 0; }
 }

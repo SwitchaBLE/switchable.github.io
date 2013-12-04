@@ -306,13 +306,27 @@ header {
     }
     #signal {
         z-index: -1;
-        margin-top: -7em;
+        margin-top: -10em;
         margin-left: 7em;
-        div {
-            border: 3px solid @blue;
-            border-radius: 50%;
-            position: absolute;
-            z-index: -1;
+        svg {
+            margin: -75em;
+            height: 150em;
+        }
+        circle {
+//            -ms-transform-origin: 50em 50em;
+//            -moz-transform-origin: 50em 50em;
+//            -webkit-transform-origin: 50em 50em;
+//            transform-origin: 50em 50em;
+//            margin-top: -50em;
+//            margin-left: -50em;
+//            width: 100em;
+//            height: 100em;
+//            border: 3px solid @blue;
+//            border-radius: 50%;
+//            position: absolute;
+//            z-index: -1;
+            stroke: @blue;
+            stroke-width: .1;
         }
     }
 }

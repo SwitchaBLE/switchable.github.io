@@ -34,10 +34,11 @@ header { -skrollr-animation-name: header; }
 #svg-lightbulb .light * { -skrollr-animation-name: lightbulb-light; }
 #svg-phone { -skrollr-animation-name: svg-phone; }
 #signal { -skrollr-animation-name: signal; }
-#signal div:nth-child(4) { -skrollr-animation-name: signal-1; }
-#signal div:nth-child(3) { -skrollr-animation-name: signal-2; }
-#signal div:nth-child(2) { -skrollr-animation-name: signal-3; }
-#signal div:nth-child(1) { -skrollr-animation-name: signal-4; }
+#signal svg { -skrollr-animation-name: signal-svg; }
+#signal circle:nth-child(4) { -skrollr-animation-name: signal-1; }
+#signal circle:nth-child(3) { -skrollr-animation-name: signal-2; }
+#signal circle:nth-child(2) { -skrollr-animation-name: signal-3; }
+#signal circle:nth-child(1) { -skrollr-animation-name: signal-4; }
 #lightbulb-column { -skrollr-animation-name: lightbulb-column; }
 #phone-column { -skrollr-animation-name: phone-column; }
 
@@ -230,22 +231,7 @@ header { -skrollr-animation-name: header; }
 
 @-skrollr-keyframes scene3 {
     8999 { opacity: 0; }
-    9000 {
-        opacity: 1;
-        -webkit-transform: none;
-    }
-    18500 { -webkit-transform: !translateZ(0); }
-}
-
-@-skrollr-keyframes scene3-row {
-    9000 {
-        -webkit-backface-visibility: visible;
-        -webkit-perspective: none;
-    }
-    18500 {
-        -webkit-backface-visibility: hidden;
-        -webkit-perspective: !1000;
-    }
+    9000 { opacity: 1; }
 }
 
 @-skrollr-keyframes explanation {
@@ -276,10 +262,10 @@ header { -skrollr-animation-name: header; }
 @-skrollr-keyframes explanation-5 {
     20000 {
         opacity: 0;
-        margin-left: 0em;
+        transform: translate3d(0em, 0, 0);
     }
     30000 {
-        margin-left: 155em;
+        transform: translate3d(155em, 0, 0);
         opacity: 1;
     }
 }
@@ -304,76 +290,39 @@ header { -skrollr-animation-name: header; }
     18500 { display: block; }
 }
 
+@-skrollr-keyframes signal-svg {
+    18500 { width: 0em; margin-left: 0em; }
+    23500 { width: 150em; margin-left: -75em; }
+}
+
 @-skrollr-keyframes signal-1 {
-    18500 {
-        transform: scale(0);
-        opacity: 1;
-    }
-    22500 {
-        transform: scale(1);
-        opacity: 0;
-    }
+    18500 { opacity: 1; }
+    21500 { opacity: 0; }
 }
 
 @-skrollr-keyframes signal-2 {
-    19500 {
-        width: 0em;
-        height: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
-        opacity: 1;
-    }
-    23500 {
-        width: 200em;
-        height: 200em;
-        margin-top: -100em;
-        margin-left: -100em;
-        opacity: 0;
-    }
+    19500 { opacity: 1; }
+    22000 { opacity: 0; }
 }
 
 @-skrollr-keyframes signal-3 {
-    20500 {
-        width: 0em;
-        height: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
-        opacity: 1;
-    }
-    24500 {
-        width: 200em;
-        height: 200em;
-        margin-top: -100em;
-        margin-left: -100em;
-        opacity: 0;
-    }
+    20500 {opacity: 1; }
+    23000 { opacity: 0; }
 }
 
 @-skrollr-keyframes signal-4 {
-    21500 {
-        width: 0em;
-        height: 0em;
-        margin-top: 0em;
-        margin-left: 0em;
-        opacity: 1;
-    }
-    25500 {
-        width: 200em;
-        height: 200em;
-        margin-top: -100em;
-        margin-left: -100em;
-        opacity: 0;
-    }
+    21000 { opacity: 1; }
+    23500 { opacity: 0; }
 }
 
 @-skrollr-keyframes phone-column {
-    20000 { margin-left: 0em; }
-    30000 { margin-left: -150em; }
+    20000 { transform: translate3d(0em, 0, 0); }
+    30000 { transform: translate3d(-150em, 0, 0); }
 }
 
 @-skrollr-keyframes lightbulb-column {
-    20000 { margin-right[swing]: 0em; }
-    30000 { margin-right[swing]: 150em; }
+    20000 { transform[swing]: translate3d(0em, 0, 0); }
+    30000 { transform[swing]: translate3d(-150em, 0, 0); }
 }
 
 @-skrollr-keyframes scene4 {
@@ -395,12 +344,12 @@ header { -skrollr-animation-name: header; }
 }
 
 @-skrollr-keyframes bios {
-    30000 { transform: translateX(-300%); }
-    32500 { transform: translateX(-297%); }
-    33000 { transform: translateX(-200%); }
-    35500 { transform: translateX(-197%); }
-    36000 { transform: translateX(-100%); }
-    38500 { transform: translateX(-97%); }
-    39000 { transform: translateX(0%); }
-    41500 { transform: translateX(3%); }
+    30000 { transform: translate3d(-300%, 0, 0); }
+    32500 { transform: translate3d(-297%, 0, 0); }
+    33000 { transform: translate3d(-200%, 0, 0); }
+    35500 { transform: translate3d(-197%, 0, 0); }
+    36000 { transform: translate3d(-100%, 0, 0); }
+    38500 { transform: translate3d(-97%, 0, 0); }
+    39000 { transform: translate3d(0%, 0, 0); }
+    41500 { transform: translate3d(3%, 0, 0); }
 }
