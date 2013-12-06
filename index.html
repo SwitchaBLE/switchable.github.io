@@ -434,6 +434,24 @@
                 return Math.abs(currentTop - targetTop) / 3;
             },
         });
+        
+        if (location.hash === "#cycle") {
+            function scrollDown() {
+                s.animateTo(s.getMaxScrollTop(), {
+                    duration: 25000,
+                    done: scrollUp
+                });
+            }
+            function scrollUp() {
+                s.animateTo(0, {
+                    duration: 4000,
+                    done: function() {
+                        setTimeout(scrollDown, 5000);
+                    }
+                });
+            }
+            scrollDown(); 
+        }
     </script>
 </body>
 </html>
