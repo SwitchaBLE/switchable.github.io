@@ -1,5 +1,6 @@
 @blue: #6597cf;
 @gray: #aaa;
+@dark-gray: #222;
 @circle-size: 3.5em;
 @mini-circle-size: 1em;
 @subheader-size: 0.28em;
@@ -220,7 +221,7 @@ header {
 #scene2 {
     z-index: 1;
     top: 0%;
-    background-color: #222;
+    background-color: @dark-gray;
     #clock {
         width: @clock-size;
         display: inline-block;
@@ -311,6 +312,22 @@ header {
 }
 
 #scene4 {
+    background-color: @dark-gray;
+    h1 {
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        position: absolute;
+        width: 500%;
+        margin-left: -200%;
+        height: 10%;
+        margin-top: -5%;
+        top: 50%;
+        white-space: nowrap;
+    }
+}
+
+#scene5 {
     
     #pic-container {
         margin-top: -@nav-height;
@@ -329,6 +346,7 @@ header {
         #pic-brett { background-image: url('../images/brett.jpg'); }
         #pic-derek { background-image: url('../images/derek.jpg'); }
         #pic-andrew { background-image: url('../images/andrew.jpg'); }
+        #pic-team { background-image: url('../images/team.jpg'); }
     }
     #bio-container {
         position: absolute;
@@ -357,5 +375,13 @@ header {
                 color: white;
             }
         }
+    }
+}
+
+#scene6 {
+    background-color: white;
+    opacity: 0;
+    #docs-strip {
+        
     }
 }

@@ -308,13 +308,22 @@
     </section>
     
     <section id="scene4">
+        <h1>The Team</h1>
+    </section>
+    
+    <section id="scene5">
         <div id="pic-container">
             <div id="pic-esteban"></div>
             <div id="pic-brett"></div>
             <div id="pic-derek"></div>
             <div id="pic-andrew"></div>
+            <div id="pic-team"></div>
         </div>
         <div id="bio-container">
+            <div id="bio-team">
+                <h2>The Team</h2>
+                <h6>In its natural environment</h6>
+            </div>
             <div id="bio-andrew">
                 <h2>Andrew Branch</h2>
                 <h6>iOS &bull; Branding &amp; Visual Design</h6>
@@ -331,6 +340,16 @@
                 <h2>Esteban Porres</h2>
                 <h6>Team leader &bull; Android app</h6>
             </div>
+        </div>
+    </section>
+    
+    <section id="scene6">
+        <div id="docs-strip">
+            <div id="github"><a href="https://github.com/switchable"><img src="images/GitHub-Mark-120px-plus.png"></a></div>
+            <div id="proposal"><a href="resources/Proposal.pdf">Proposal</a></div>
+            <div id="designreport"><a href="resources/Cycle2Report.pdf">Design Report</a></div>
+            <div id="midtermreport"><a href="resources/Cycle1Report.pdf">Midterm Progress Report</a></div>
+            <div id="statusreports"><a href="#">Weekly Status Reports</a></div>
         </div>
     </section>
     
@@ -437,8 +456,8 @@
         
         if (location.hash === "#cycle") {
             function scrollDown() {
-                s.animateTo(s.getMaxScrollTop(), {
-                    duration: 25000,
+                s.animateTo(64000, {
+                    duration: 60000,
                     done: scrollUp
                 });
             }
